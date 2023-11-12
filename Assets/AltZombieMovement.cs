@@ -26,7 +26,10 @@ public class AltZombieMovement : MonoBehaviour
             playerVelocity.y = 0f;
         }
 
-        Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        //set movement relative to the orientation of the camera
+        Vector3 x = Input.GetAxis("Horizontal") * gameObject.transform.right;
+        Vector3 z = Input.GetAxis("Vertical") * gameObject.transform.forward;
+        Vector3 move = x + z;
         controller.Move(move * Time.deltaTime * playerSpeed);
 
         if (move != Vector3.zero)

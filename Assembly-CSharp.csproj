@@ -55,6 +55,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Assets\AltZombieMovement.cs" />
+    <Compile Include="Assets\floatingCamera.cs" />
     <Compile Include="Assets\ZombieMovement.cs" />
   </ItemGroup>
   <ItemGroup>
