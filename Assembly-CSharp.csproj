@@ -54,6 +54,7 @@
     <UnityVersion>2022.3.12f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\shoot.cs" />
     <Compile Include="Assets\AltZombieMovement.cs" />
     <Compile Include="Assets\floatingCamera.cs" />
     <Compile Include="Assets\ZombieMovement.cs" />
