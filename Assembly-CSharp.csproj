@@ -54,10 +54,11 @@
     <UnityVersion>2022.3.12f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\shoot.cs" />
-    <Compile Include="Assets\AltZombieMovement.cs" />
-    <Compile Include="Assets\floatingCamera.cs" />
-    <Compile Include="Assets\ZombieMovement.cs" />
+    <Compile Include="Assets\Zombie\ZombieMovement.cs" />
+    <Compile Include="Assets\scripts\floatingCamera.cs" />
+    <Compile Include="Assets\megamanAfraid.cs" />
+    <Compile Include="Assets\Zombie\Scripts\AltZombieMovement.cs" />
+    <Compile Include="Assets\GUN\shoot.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

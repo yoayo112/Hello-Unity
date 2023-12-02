@@ -366,10 +366,11 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2022.3.12f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2022.3.12f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
-"Assets/AltZombieMovement.cs"
-"Assets/floatingCamera.cs"
-"Assets/shoot.cs"
-"Assets/ZombieMovement.cs"
+"Assets/GUN/shoot.cs"
+"Assets/megamanAfraid.cs"
+"Assets/scripts/floatingCamera.cs"
+"Assets/Zombie/Scripts/AltZombieMovement.cs"
+"Assets/Zombie/ZombieMovement.cs"
 -langversion:9.0
 
 /deterministic
