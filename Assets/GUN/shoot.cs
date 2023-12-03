@@ -8,11 +8,12 @@ public class NewBehaviourScript : MonoBehaviour
     public Rigidbody projectile;
     public float speed = 20;
     private Animator animator;
+    private Transform spawn;
 
     private void Start()
     {
         animator = GetComponent<Animator>();
-        
+        spawn = GameObject.Find("bulletSpawn").GetComponent<Transform>();
     }
 
     // Update is called once per frame
@@ -21,9 +22,9 @@ public class NewBehaviourScript : MonoBehaviour
 
         if(Input.GetButtonDown("Fire1"))
         {
-            Rigidbody newprojectile = Instantiate(projectile, transform.position, transform.rotation) as Rigidbody;
-            newprojectile.velocity = transform.TransformDirection(new Vector3(0, 0, speed));
             animator.SetTrigger("fire");
+            Rigidbody newprojectile = Instantiate(projectile, spawn.position, spawn.rotation) as Rigidbody;
+            newprojectile.velocity = transform.TransformDirection(new Vector3(-1 *speed, 0, 0));
         }
     }
 }
