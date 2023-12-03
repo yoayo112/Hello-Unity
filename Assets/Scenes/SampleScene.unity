@@ -1879,7 +1879,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!64 &765625561
 MeshCollider:
@@ -1949,9 +1949,9 @@ Rigidbody:
   m_GameObject: {fileID: 865205143}
   serializedVersion: 4
   m_Mass: 1
-  m_Drag: 3
-  m_AngularDrag: 9
-  m_CenterOfMass: {x: 0, y: -2.57, z: 0}
+  m_Drag: 1
+  m_AngularDrag: 8
+  m_CenterOfMass: {x: 0, y: -2.52, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
   m_IncludeLayers:
@@ -1979,8 +1979,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d888ae0923b63248929a9d1bede4970, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
-  fearDistance: 3
+  startled: -1
+  speed: 14
+  fearDistance: 4
+  fearTime: 3000
 --- !u!1 &871204572 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 455901878147407786, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
@@ -2030,15 +2032,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a298d6abcba4a104b9af738baa1df979, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -13.07
+      value: -35.4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a298d6abcba4a104b9af738baa1df979, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.66
+      value: 2.218
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a298d6abcba4a104b9af738baa1df979, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -11.89
+      value: -22.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a298d6abcba4a104b9af738baa1df979, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2073,9 +2075,17 @@ PrefabInstance:
       value: megaman
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: a298d6abcba4a104b9af738baa1df979, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: a298d6abcba4a104b9af738baa1df979, type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 2482d94c716a8cc4d9bcd81da681c0c0, type: 2}
+    - target: {fileID: 5907185586852236096, guid: a298d6abcba4a104b9af738baa1df979, type: 3}
+      propertyPath: m_Name
+      value: Head
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
