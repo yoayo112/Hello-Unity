@@ -10,6 +10,8 @@ public class megamanAfraid : MonoBehaviour
     private Transform megaman;
     private Transform mmHead;
     private Rigidbody mmBody;
+    private Material megaMat;
+    private Animator animator;
 
     public int startled = -1;
     public float speed = 5.0f;
@@ -23,6 +25,8 @@ public class megamanAfraid : MonoBehaviour
         megaman = GameObject.Find("megaman").GetComponent<Transform>();
         mmBody = GetComponent<Rigidbody>();
         mmHead = GameObject.Find("megaman/Armature/root/Head").GetComponent<Transform>();
+        megaMat = GameObject.Find("megaman/Mesh").GetComponent<SkinnedMeshRenderer>().material;
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -33,18 +37,28 @@ public class megamanAfraid : MonoBehaviour
         float zd = Math.Abs(player.position.z - megaman.position.z);
 
         //find jump scare, proximity, and if already frightened
-        if (Input.GetButtonDown("Fire1") && (xd <= fearDistance || zd <= fearDistance) && startled == -1) { startled = fearTime; }
+        if (Input.GetButtonDown("Fire1") && (xd <= fearDistance && zd <= fearDistance) && startled == -1) { startled = fearTime; }
 
         if (startled > 0)
         {
+            animator.SetTrigger("boo");
+            animator.SetInteger("startled",startled);
             afraid();
             
         } // otherwise we're all good/
-        else { friendly(); startled = -1; }
+        else
+        {
+            friendly();
+            startled = -1;
+        }
     }
 
     void friendly()
     {
+        //set facial expression via UV offset
+        megaMat.SetFloat("_OffsetU",0.49F);
+        megaMat.SetFloat("_OffsetV",-0.25F);
+
         //Was using this, but mm kept sliding slowly backwards??
         megaman.LookAt(new Vector3(player.position.x, megaman.position.y, player.position.z));
 
@@ -66,6 +80,11 @@ public class megamanAfraid : MonoBehaviour
 
     void afraid()
     {
+
+        //set facial expression via UV offset
+        megaMat.SetFloat("_OffsetU", 0.49F);
+        megaMat.SetFloat("_OffsetU", 0.995F);
+
         //mmBody.constraints = RigidbodyConstraints.None;
 
         //find distance *again* (he is still frightened, but will only sprint the fear distance. then he will wait the rest of the "startled" frames)
@@ -73,7 +92,7 @@ public class megamanAfraid : MonoBehaviour
         float zd = Math.Abs(player.position.z - megaman.position.z);
 
         //if you keep chasing him hell stal frightened for longer.
-        if((xd <= fearDistance || zd <= fearDistance))
+        if((xd <= fearDistance && zd <= fearDistance))
         {
             //find the slope of the line between zombie and megaman.
             Vector3 direction = player.position - (new Vector3(megaman.position.x, 0, megaman.position.z));
