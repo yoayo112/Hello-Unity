@@ -364,6 +364,7 @@
 "Assets/HOUSES/door.cs"
 "Assets/Megaman/megamanAfraid.cs"
 "Assets/scripts/floatingCamera.cs"
+"Assets/scripts/NonConvexMeshCollider.cs"
 "Assets/Zombie/Scripts/AltZombieMovement.cs"
 "Assets/Zombie/ZombieMovement.cs"
 -langversion:9.0
