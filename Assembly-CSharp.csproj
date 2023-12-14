@@ -59,6 +59,7 @@
     <Compile Include="Assets\Megaman\megamanAfraid.cs" />
     <Compile Include="Assets\Zombie\ZombieMovement.cs" />
     <Compile Include="Assets\scripts\floatingCamera.cs" />
+    <Compile Include="Assets\HOUSES\door_outside.cs" />
     <Compile Include="Assets\Zombie\Scripts\AltZombieMovement.cs" />
     <Compile Include="Assets\GUN\shoot.cs" />
   </ItemGroup>
